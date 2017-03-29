@@ -116,18 +116,18 @@ Task 6: (stretch) See if you can refocus the map to roughly the bounding box of 
 
 
 ===================== */
-// 
-// var drawControl = new L.Control.Draw({
-//   draw: {
-//     polyline: true,
-//     polygon: false,
-//     circle: false,
-//     marker: false,
-//     rectangle: false,
-//   }
-// });
 //
-//  map.addControl(drawControl);
+var drawControl = new L.Control.Draw({
+  draw: {
+    polyline: true,
+    polygon: false,
+    circle: false,
+    marker: false,
+    rectangle: false,
+  }
+});
+
+ map.addControl(drawControl);
 
 
 
@@ -158,7 +158,8 @@ var updatePosition = function(lat, lng, updated) {
   if (state.position.marker) { map.removeLayer(state.position.marker); }
   state.position.marker = L.circleMarker([lat, lng],
     {
-      color: "#8C92AC",
+      color: "MidnightBlue",
+      radius: 40,
       clickable: true
 
 }).bindPopup(popupContent).openPopup();
