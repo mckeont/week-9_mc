@@ -8,14 +8,14 @@ body {
   position: absolute;
   height: 50px;
   width: 100%;
-  background-color: blue;
-  color: blue;
+  background-color: #444;
+  color: #fff;
   position: absolute;
   top: 0;
 }
 
 .map {
-  position: fixed;
+  position: absolute;
   left: 440px;
   right: 0;
   bottom: 0;
@@ -30,7 +30,7 @@ body {
   bottom: 0;
   padding: 20px;
   overflow: hidden;
-  overflow-y: auto
+  overflow-y: auto;
 }
 
 #toggle-sidebar {
