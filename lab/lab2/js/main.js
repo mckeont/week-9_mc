@@ -147,6 +147,7 @@ var state = {
 
 var goToOrigin = _.once(function(lat, lng) {
   map.flyTo([lat, lng], 14);
+  console.log(goToOrigin);
 });
 
 /* Given a lat and a long, we should create a marker, store it
@@ -159,7 +160,7 @@ var updatePosition = function(lat, lng, updated) {
   state.position.marker = L.circleMarker([lat, lng],
     {
       color: "MidnightBlue",
-      radius: 40,
+      radius: 30,
       clickable: true
 
 }).bindPopup(popupContent).openPopup();
@@ -210,7 +211,7 @@ var finalLon;
     }
     var dest = $('#dest').val();
     //Makes an API request and returns geo JSON
-    var direction = $.ajax('https://search.mapzen.com/v1/search?api_key=mapzen-oKSP1Yt&text=' + dest + '&boundary.circle.lat=' + yourLat + '&boundary.circle.lon=' + yourLon + '&boundary.circle.radius=100');
+    var direction = $.ajax('https://search.mapzen.com/v1/search?api_key=mapzen-qruEP3j&text=' + dest + '&boundary.circle.lat=' + yourLat + '&boundary.circle.lon=' + yourLon + '&boundary.circle.radius=100');
     //retrieve the lat.long coordinates from the geoJSON
     direction.done(function(geoInfo)
     {
@@ -239,14 +240,14 @@ var finalLon;
 
 
 
-//Define global variables for the 2nd API call
+//Define global for 2nd
 var bestRoute;
 var bikePath;
 
 // click handler for the "calculate" button (probably you want to do something with this)
   $("#calculate").click(function(e) {
     var dest = $('#dest').val();
-    var stringRoute = "https://matrix.mapzen.com/optimized_route?json=" + JSON.stringify(routePoints) + "&api_key=mapzen-oKSP1Yt";
+    var stringRoute = "https://matrix.mapzen.com/optimized_route?json=" + JSON.stringify(routePoints) + "&api_key=mapzen-qruEP3j";
     var calc = $.ajax(stringRoute);
     calc.done(function(getInfo) {
       var str = getInfo.trip.legs[0].shape;
