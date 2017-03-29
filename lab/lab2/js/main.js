@@ -116,18 +116,18 @@ Task 6: (stretch) See if you can refocus the map to roughly the bounding box of 
 
 
 ===================== */
-
-var drawControl = new L.Control.Draw({
-  draw: {
-    polyline: true,
-    polygon: false,
-    circle: false,
-    marker: false,
-    rectangle: false,
-  }
-});
-
- map.addControl(drawControl);
+// 
+// var drawControl = new L.Control.Draw({
+//   draw: {
+//     polyline: true,
+//     polygon: false,
+//     circle: false,
+//     marker: false,
+//     rectangle: false,
+//   }
+// });
+//
+//  map.addControl(drawControl);
 
 
 
@@ -152,7 +152,7 @@ var goToOrigin = _.once(function(lat, lng) {
 /* Given a lat and a long, we should create a marker, store it
  *  somewhere, and add it to the map
  */
-var popupContent = "Your Current Location";
+var popupContent = "Here you are! Let's go for a bike ride!";
 
 var updatePosition = function(lat, lng, updated) {
   if (state.position.marker) { map.removeLayer(state.position.marker); }
@@ -183,6 +183,13 @@ $(document).ready(function() {
   } else {
     alert("Unable to access geolocation API!");
   }
+
+
+
+
+
+
+
 });
 
 //Define global variables used for 1st API call
