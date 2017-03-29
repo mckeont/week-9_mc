@@ -20,9 +20,6 @@ body {
   right: 0;
   bottom: 0;
   top: 50px;
-  border-top: black;
-  border-style: groove;
-  border-width: medium;
 }
 
 .sidebar {
