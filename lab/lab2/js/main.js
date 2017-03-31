@@ -193,8 +193,13 @@ var finalLon;
         "directions_options":
             {"units":"miles"}
       };
+      var markLat = finalLat;
+      var markLon = finalLon;
+      console.log(finalLon);
+      var point = [markLat, markLon];
       var dataArray = geoInfo.features[0].geometry.coordinates;
-      var marker = L.marker(dataArray).addTo(map);
+      var marker = L.marker(point.reverse()).addTo(map);
+      console.log(marker);
       var latlon = dataArray.reverse();
     });
  });
@@ -216,7 +221,7 @@ var bikePath;
       var str = getInfo.trip.legs[0].shape;
       var bikePath = decode(str);
       var bestRoute = L.polyline(bikePath, {
-        color: 'green'
+        color: 'blue'
       }).addTo(map);
     });
   });
